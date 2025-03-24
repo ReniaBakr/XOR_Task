@@ -13,7 +13,7 @@ def xor_gate(a, b):
     d = nand_gate(a, b) #  NAND Gate
     return and_gate(c, d)  #  AND Gate
 
-# ✅ Testing the XOR Gate
+#  Test the XOR Gate
 def test_xor_gate():
     assert xor_gate(0, 0) == 0  
     assert xor_gate(0, 1) == 1 
