@@ -25,6 +25,18 @@ class LogicGate(tf.Module):
 def compute_loss(y_pred, y_true): 
     return tf.reduce_mean(tf.square(y_pred - y_true)) 
 
+def xor_gate(a, b):
+    return a ^ b  
+
+#  Test the XOR Gate
+def test_xor_gate():
+    assert xor_gate(0, 0) == 0  
+    assert xor_gate(0, 1) == 1 
+    assert xor_gate(1, 0) == 1 
+    assert xor_gate(1, 1) == 0  
+    print("All tests passed! ")
+
+
 def train_model(model, x_train, y_train, learning_rate=0.01, epochs=20000): 
     for epoch in range(epochs): 
         with tf.GradientTape() as tape: 
